@@ -36,9 +36,10 @@ const TableUsers = (props) => {
         return;
       }
 
-      const regEmail = /(^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$)/;
-      const regPhone = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
-      const regName = /(^[A-Za-z][A-Za-z0-9_]{2,}$)/;
+      const regEmail =
+        /(^[^<>()[\]\\,;:\%#^\s@\"$&!@]+@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}))$)/;
+      const regPhone = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})$/;
+      const regName = /(^[A-Za-z.-]+(\s*[A-Za-z.-]+)*$)/;
 
       Papa.parse(file, {
         complete: function (results) {
@@ -58,8 +59,8 @@ const TableUsers = (props) => {
                 rawCSV.map((item, index) => {
                   if (index > 0 && item.length === 5) {
                     let obj = {};
-                    obj.email = regEmail.test(item[0].trim()) ? item[0] : '';
-                    obj.name = regName.test(item[1].trim()) ? item[1] : '';
+                    obj.email = regEmail.test(item[0]) ? item[0] : '';
+                    obj.name = regName.test(item[1]) ? item[1] : '';
                     obj.phone = regPhone.test(item[2].trim()) ? item[2] : '';
                     obj.address = item[3];
                     obj.note = item[4];
