@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Container>
           <div className="my-2 add-new">
-            <h4>List Users</h4>
+            <h5>Technical Exercise</h5>
           </div>
           <TableUsers />
         </Container>

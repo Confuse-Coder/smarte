@@ -16,6 +16,7 @@
     "react-csv": "2.2.2",
     "react-dom": "^17.0.2",
     "react-error-overlay": "6.0.9",
+    "react-google-drive-picker": "^1.2.0",
     "react-paginate": "8.1.2",
     "react-scripts": "4.0.3",
     "react-toastify": "8.2.0",

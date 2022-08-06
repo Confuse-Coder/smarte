@@ -1,0 +1,23 @@
+.sort-email {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    i {
+      cursor: pointer;
+      padding: 0 6px;
+    }
+  }
+}
+
+.sort-name {
+  position: relative;
+  span {
+    position: absolute;
+    right: 0px;
+    i {
+      cursor: pointer;
+      padding: 0 6px;
+    }
+  }
+}
